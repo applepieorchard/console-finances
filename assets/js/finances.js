@@ -98,7 +98,19 @@ var total = 0;
 
 // For loop to add up every number in the dataset
 for (let i = 0; i < finances.length; i++) {
+//  [i][1] defines the second column of evert row in the array
     total += finances[i][1]
 }
 // Logs the total amount to the console.
 console.log("Total: $" + total)
+
+// Practice with a simpler dataset
+// var values = [2, 5, 3];
+// var sum = 0;
+// for (let i = 0; i < values.length - 1; i++) {
+//   var start = values[i]
+//   var end = values[i+1]
+//   sum += end - start
+// }
+//
+// console.log(sum / (values.length - 1))
