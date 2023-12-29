@@ -93,13 +93,11 @@ console.log("Financial Analysis\n------------------");
 // Logs the length of the dataset, in this case the number of months, to the console
 console.log("Total Months: " + finances.length);
 
-// Declaring total for use in profit/loss calculation
 var total = 0;
-
 // For loop to add up every number in the dataset
 for (let i = 0; i < finances.length; i++) {
 //  [i][1] defines the second column of evert row in the array
-    total += finances[i][1]
+    total += finances[i][1];
 }
 // Logs the total amount to the console.
 console.log("Total: $" + total)
@@ -108,9 +106,17 @@ console.log("Total: $" + total)
 // var values = [2, 5, 3];
 // var sum = 0;
 // for (let i = 0; i < values.length - 1; i++) {
-//   var start = values[i]
-//   var end = values[i+1]
-//   sum += end - start
+//   let start = values[i];
+//   let end = values[i+1];
+//   sum += end - start;
 // }
 //
-// console.log(sum / (values.length - 1))
+// console.log(sum / (values.length - 1));
+var changes = 0
+for (let i = 0; i < finances.length - 1; i++) {
+  let start = finances[i][1];
+  let end = finances[i+1][1];
+  changes += end - start;
+}
+
+console.log("Average Change: " + changes / (finances.length - 1))
