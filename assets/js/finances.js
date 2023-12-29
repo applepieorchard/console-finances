@@ -1,3 +1,4 @@
+// The dataset provided as an array of arrays (or 2d array).
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -87,5 +88,17 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// String for report title, \n used to add a new line.
 console.log("Financial Analysis\n------------------");
+// Logs the length of the dataset, in this case the number of months, to the console
 console.log("Total Months: " + finances.length);
+
+// Declaring total for use in profit/loss calculation
+var total = 0;
+
+// For loop to add up every number in the dataset
+for (let i = 0; i < finances.length; i++) {
+    total += finances[i][1]
+}
+// Logs the total amount to the console.
+console.log("Total: $" + total)
