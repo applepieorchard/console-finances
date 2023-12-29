@@ -119,4 +119,4 @@ for (let i = 0; i < finances.length - 1; i++) {
   changes += end - start;
 }
 
-console.log("Average Change: " + changes / (finances.length - 1))
+console.log("Average Change: " + Math.round(changes / (finances.length - 1) * 100) / 100)
