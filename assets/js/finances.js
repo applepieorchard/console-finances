@@ -88,14 +88,16 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+var length = finances.length
+
 // String for report title, \n used to add a new line.
 console.log("Financial Analysis\n------------------");
 // Logs the length of the dataset, in this case the number of months, to the console
-console.log("Total Months: " + finances.length);
+console.log("Total Months: " + length);
 
 var total = 0;
 // For loop to add up every number in the dataset
-for (let i = 0; i < finances.length; i++) {
+for (let i = 0; i < length; i++) {
 //  [i][1] defines the second column of evert row in the array
     total += finances[i][1];
 }
@@ -113,10 +115,10 @@ console.log("Total: $" + total)
 //
 // console.log(sum / (values.length - 1));
 var changes = 0
-for (let i = 0; i < finances.length - 1; i++) {
+for (let i = 0; i < length - 1; i++) {
   let start = finances[i][1];
   let end = finances[i+1][1];
   changes += end - start;
 }
 
-console.log("Average Change: " + Math.round(changes / (finances.length - 1) * 100) / 100)
+console.log("Average Change: " + Math.round(changes / (length - 1) * 100) / 100)
