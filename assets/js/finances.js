@@ -85,7 +85,7 @@ var finances = [
   ['Nov-2016', 795914],
   ['Dec-2016', 60988],
   ['Jan-2017', 138230],
-  ['Feb-2017', 671099],
+  ['Feb-2017', 671099]
 ];
 
 var length = finances.length;
@@ -99,8 +99,8 @@ var total = 0;
 // For loop to add up every number in the dataset
 for (let i = 0; i < length; i++) {
 //  [i][1] defines the second column of evert row in the array
-    total += finances[i][1];
-}
+    total += finances[i][1]
+};
 // Logs the total amount to the console.
 console.log("Total: $" + total);
 
@@ -110,11 +110,12 @@ console.log("Total: $" + total);
 // for (let i = 0; i < values.length - 1; i++) {
 //   let start = values[i];
 //   let end = values[i+1];
-//   sum += end - start;
-// }
+//   sum += end - start
+// };
 //
-// console.log(sum / (values.length - 1));
-var changesTotal = 0
+// console.log(sum / (values.length - 1))
+
+var changesTotal = 0;
 var changesMaxMonth; 
 var changesMaxValue;
 var changesMinMonth;
@@ -128,15 +129,15 @@ for (let i = 0; i < length - 1; i++) {
   // Greatest Increase
   if (changesMaxValue === undefined || change > changesMaxValue) {
     changesMaxMonth = finances[i+1][0];
-    changesMaxValue = change;
-  }
+    changesMaxValue = change
+  };
   // Greatest Decrease
   if (changesMinMonth === undefined || change < changesMinValue) {
     changesMinMonth = finances[i+1][0];
-    changesMinValue = change;
+    changesMinValue = change
   }
-}
+};
 
 console.log("Average Change: " + Math.round(changesTotal / (length - 1) * 100) / 100);
-console.log("Greatest Increase in Profits/Losses: " + changesMaxMonth + " ($" + changesMaxValue + ")")
-console.log("Greatest Decrease in Profits/Losses: " + changesMinMonth + " ($" + changesMinValue + ")");
+console.log("Greatest Increase in Profits/Losses: " + changesMaxMonth + " ($" + changesMaxValue + ")");
+console.log("Greatest Decrease in Profits/Losses: " + changesMinMonth + " ($" + changesMinValue + ")")
