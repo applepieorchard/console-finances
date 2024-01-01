@@ -88,7 +88,7 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-var length = finances.length
+var length = finances.length;
 
 // String for report title, \n used to add a new line.
 console.log("Financial Analysis\n------------------");
@@ -102,7 +102,7 @@ for (let i = 0; i < length; i++) {
     total += finances[i][1];
 }
 // Logs the total amount to the console.
-console.log("Total: $" + total)
+console.log("Total: $" + total);
 
 // Practice with a simpler dataset
 // var values = [2, 5, 3];
@@ -115,10 +115,20 @@ console.log("Total: $" + total)
 //
 // console.log(sum / (values.length - 1));
 var changesTotal = 0
+var changesMaxMonth; 
+var changesMaxValue;
 for (let i = 0; i < length - 1; i++) {
   let start = finances[i][1];
   let end = finances[i+1][1];
-  changesTotal += end - start;
+  let change = end - start;
+  // Total Changes
+  changesTotal += change;
+  // Greatest Change
+  if (changesMaxValue === undefined || change > changesMaxValue) {
+    changesMaxMonth = finances[i+1][0];
+    changesMaxValue = change;
+  }
 }
 
-console.log("Average Change: " + Math.round(changesTotal / (length - 1) * 100) / 100)
+console.log("Average Change: " + Math.round(changesTotal / (length - 1) * 100) / 100);
+console.log("Greatest Increase in Profits/Losses: " + changesMaxMonth + " (" + changesMaxValue + ")")
