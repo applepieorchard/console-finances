@@ -114,11 +114,11 @@ console.log("Total: $" + total)
 // }
 //
 // console.log(sum / (values.length - 1));
-var changes = 0
+var changesTotal = 0
 for (let i = 0; i < length - 1; i++) {
   let start = finances[i][1];
   let end = finances[i+1][1];
-  changes += end - start;
+  changesTotal += end - start;
 }
 
-console.log("Average Change: " + Math.round(changes / (length - 1) * 100) / 100)
+console.log("Average Change: " + Math.round(changesTotal / (length - 1) * 100) / 100)
